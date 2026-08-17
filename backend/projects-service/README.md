@@ -14,6 +14,16 @@ From this directory:
 uv sync
 ```
 
+## Configure the database
+
+Create the local environment file and replace the placeholder password:
+
+```bash
+cp .env.example .env
+```
+
+The local PostgreSQL service is available at `localhost:5433`.
+
 ## Run locally
 
 ```bash
@@ -30,4 +40,24 @@ The service will be available at:
 
 ```bash
 uv run pytest
+```
+
+## Database migrations
+
+Create a migration after changing SQLModel table models:
+
+```bash
+uv run alembic revision --autogenerate -m "describe the schema change"
+```
+
+Review the generated migration before applying it:
+
+```bash
+uv run alembic upgrade head
+```
+
+Inspect the currently applied revision:
+
+```bash
+uv run alembic current
 ```
