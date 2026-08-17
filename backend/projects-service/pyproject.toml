@@ -1,0 +1,22 @@
+[project]
+name = "projects-service"
+version = "0.1.0"
+description = "Project management service for Mosquera Soft"
+readme = "README.md"
+authors = [
+    { name = "Jalberth Mosquera", email = "jmosquera2305@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.10.0",
+    "pytest>=9.1.1",
+]
