@@ -3,6 +3,7 @@ from logging.config import fileConfig
 from alembic import context
 from sqlmodel import SQLModel
 
+from projects_service import models  # noqa: F401
 from projects_service.config import settings
 from projects_service.database import engine
 
